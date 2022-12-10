@@ -24,7 +24,7 @@ public class Show_Bookshelf_Item : MonoBehaviour
         // }
 
         if (books[1].GetComponent<Move_On_Click>().correct_spot) {
-            books[1].SetActive(false);
+            // books[1].SetActive(false);
             item.SetActive(true);
             little_item.SetActive(true);
         }
