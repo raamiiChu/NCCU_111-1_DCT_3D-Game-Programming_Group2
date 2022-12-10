@@ -30,7 +30,7 @@ public class Light_Trigger : MonoBehaviour
     public GameObject investigation_UI;
 
     // 是否能調查
-    public bool enable_investigate;
+    private bool enable_investigate;
 
     // Start is called before the first frame update
     void Start()
