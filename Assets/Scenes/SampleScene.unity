@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger_dist: 5
   player: {fileID: 132212075}
+  cam: {fileID: 0}
 --- !u!65 &40531914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1125,7 +1126,7 @@ MonoBehaviour:
   trigger_dist: 5
   player: {fileID: 132212075}
   investigation_UI: {fileID: 2078947446}
-  enable_investigate: 0
+  cam: {fileID: 963194227}
 --- !u!54 &146618237
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2054,7 +2055,7 @@ MonoBehaviour:
   trigger_dist: 2.68
   player: {fileID: 132212075}
   investigation_UI: {fileID: 1208711358}
-  enable_investigate: 0
+  cam: {fileID: 963194227}
 --- !u!54 &815216175
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3663,6 +3664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger_dist: 5
   player: {fileID: 132212075}
+  cam: {fileID: 0}
 --- !u!65 &1732330937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4166,6 +4168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger_dist: 5
   player: {fileID: 132212075}
+  cam: {fileID: 0}
 --- !u!65 &1968144920
 BoxCollider:
   m_ObjectHideFlags: 0
