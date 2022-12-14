@@ -55,9 +55,15 @@ public class Light_Trigger : MonoBehaviour
 
         // 計算玩家與發光物的距離
         float dist = (Vector3.Distance(pos_player, pos_item));
-        
-        // 距離夠近才發光
-        if (dist < trigger_dist) {
+
+        // 紀錄物件在螢幕中的座標
+        Vector3 view_pos = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+
+        // 紀錄是否在螢幕指定範圍內
+        bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.7f);
+
+        // 距離夠近且位於螢幕指定範圍內才發光
+        if (dist < trigger_dist && in_screen) {
             mat.EnableKeyword("_EMISSION");
             enable_investigate = true;
             halo.GetType().GetProperty("enabled").SetValue(halo, true);
