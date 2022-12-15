@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
 // test git push
+// test 2
 
 public class GameManager : MonoBehaviour
 {
