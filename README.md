@@ -54,6 +54,8 @@
   玩家
 - investigation UI  
   調查 UI 介面
+- cam
+  玩家攝影機
 
 
 ## Mouse_Drag

@@ -32,6 +32,9 @@ public class Light_Trigger : MonoBehaviour
     // 是否能調查
     private bool enable_investigate;
 
+    // 玩家相機
+    public Camera cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +60,7 @@ public class Light_Trigger : MonoBehaviour
         float dist = (Vector3.Distance(pos_player, pos_item));
 
         // 紀錄物件在螢幕中的座標
-        Vector3 view_pos = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+        Vector3 view_pos = cam.WorldToViewportPoint(gameObject.transform.position);
 
         // 紀錄是否在螢幕指定範圍內
         bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.7f);
