@@ -5,8 +5,10 @@ using System.Threading;
 
 public class Input_Password : MonoBehaviour
 {
+    // 輸入密碼、正確、錯誤 介面
     public GameObject input_UI, wrong, correct;
 
+    // 玩家是否正在輸入密碼
     private bool is_typing;
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class Input_Password : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 按下 Q 開啟輸入欄位，再次按下 Q 會關閉
         if (Input.GetKeyDown(KeyCode.Q)) {
             if (is_typing) {
                 is_typing = false;
@@ -29,6 +32,8 @@ public class Input_Password : MonoBehaviour
                 input_UI.SetActive(false);
             }   
         }
+
+        // 按下 ESC 關閉 正確、錯誤的介面
         if (Input.GetKeyDown(KeyCode.Escape)) {
             correct.SetActive(false);
             wrong.SetActive(false);
