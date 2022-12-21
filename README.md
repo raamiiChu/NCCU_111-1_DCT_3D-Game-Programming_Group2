@@ -52,6 +52,8 @@
   觸發發光的距離
 - player  
   玩家
+- hint space
+  提示UI
 - investigation UI  
   調查 UI 介面
 - cam

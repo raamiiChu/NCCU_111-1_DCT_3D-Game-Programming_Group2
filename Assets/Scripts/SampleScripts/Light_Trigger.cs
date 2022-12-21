@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Light_Trigger : MonoBehaviour
 {
@@ -26,6 +27,14 @@ public class Light_Trigger : MonoBehaviour
     // 發光物的光環
     Component halo;
 
+    // 提示UI
+    public GameObject hint_space;
+
+    // 提示UI座標
+    private Vector3 original_position_hint_space = new Vector3(35f, 650f, 0f);
+    private Vector3 active_position_hint_space = new Vector3(35f, 515f, 0f);
+
+
     // 調查 UI 介面
     public GameObject investigation_UI;
 
@@ -47,6 +56,7 @@ public class Light_Trigger : MonoBehaviour
         // 紀錄發光物位置
         pos_item = gameObject.transform.position;
 
+        // 記錄光環
         halo = gameObject.GetComponent("Halo");
     }
 
@@ -63,18 +73,28 @@ public class Light_Trigger : MonoBehaviour
         Vector3 view_pos = cam.WorldToViewportPoint(gameObject.transform.position);
 
         // 紀錄是否在螢幕指定範圍內
-        bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.7f);
+        bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.45f);
 
         // 距離夠近且位於螢幕指定範圍內才發光
         if (dist < trigger_dist && in_screen) {
+            // 發光
             mat.EnableKeyword("_EMISSION");
             enable_investigate = true;
             halo.GetType().GetProperty("enabled").SetValue(halo, true);
+
+            // 顯示提示
+            hint_space.transform.DOLocalMove(active_position_hint_space, 1f);
+            hint_space.transform.DOScaleX(1f, 1f);
         }
         else {
+            // 取消發光
             mat.DisableKeyword("_EMISSION");
             enable_investigate = false;
             halo.GetType().GetProperty("enabled").SetValue(halo, false);
+
+            // 隱藏提示
+            // hint_space.transform.DOLocalMove(original_position_hint_space, 1f);
+            // hint_space.transform.DOScaleX(0.2f, 1f);
         }
 
         // 檢查是否可調查
