@@ -24,6 +24,17 @@
   移動速度
 
 
+## Hint_Manager  
+### 概要  
+- 顯示提示 UI (按下 space 調查)  
+### 位置  
+- Hint_Manager  
+### 參數 
+以下變數可視需求新增 **(請確保程式碼中有 hint_show 變數)**
+- items  
+- bookshelfs  
+
+
 ## Input_Password
 ### 概要
 - 輸入密碼  
@@ -56,6 +67,9 @@
   提示UI
 - investigation UI  
   調查 UI 介面
+- show hint
+  是否顯示提示 UI
+  跟 Hint_Manager 連動
 - cam
   玩家攝影機
 
@@ -132,6 +146,9 @@
   退出按鈕
 - trigger dist  
   觸發發光的距離
+- show hint
+  是否顯示提示 UI
+  跟 Hint_Manager 連動
 
 
 ## Teleport_On_Click  
