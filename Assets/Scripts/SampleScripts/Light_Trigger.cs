@@ -27,16 +27,11 @@ public class Light_Trigger : MonoBehaviour
     // 發光物的光環
     Component halo;
 
-    // 提示UI
-    public GameObject hint_space;
-
-    // 提示UI座標
-    private Vector3 original_position_hint_space = new Vector3(35f, 650f, 0f);
-    private Vector3 active_position_hint_space = new Vector3(35f, 515f, 0f);
-
-
     // 調查 UI 介面
     public GameObject investigation_UI;
+
+    // 是否顯示提示 UI
+    public bool show_hint = false;
 
     // 是否能調查
     private bool enable_investigate;
@@ -75,26 +70,24 @@ public class Light_Trigger : MonoBehaviour
         // 紀錄是否在螢幕指定範圍內
         bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.45f);
 
-        // 距離夠近且位於螢幕指定範圍內才發光
+        // 距離夠近且位於螢幕指定範圍內
         if (dist < trigger_dist && in_screen) {
+            // 可調查、顯示提示 UI
+            enable_investigate = true;
+            show_hint = true;
+
             // 發光
             mat.EnableKeyword("_EMISSION");
-            enable_investigate = true;
             halo.GetType().GetProperty("enabled").SetValue(halo, true);
-
-            // 顯示提示
-            hint_space.transform.DOLocalMove(active_position_hint_space, 1f);
-            hint_space.transform.DOScaleX(1f, 1f);
         }
         else {
+            // 不可調查、不顯示提示 UI
+            enable_investigate = false;
+            show_hint = false;
+
             // 取消發光
             mat.DisableKeyword("_EMISSION");
-            enable_investigate = false;
             halo.GetType().GetProperty("enabled").SetValue(halo, false);
-
-            // 隱藏提示
-            // hint_space.transform.DOLocalMove(original_position_hint_space, 1f);
-            // hint_space.transform.DOScaleX(0.2f, 1f);
         }
 
         // 檢查是否可調查
@@ -104,7 +97,11 @@ public class Light_Trigger : MonoBehaviour
 
             // 按下 space 開啟調查介面
             if (!investigation_UI.activeSelf && Input.GetKeyDown(KeyCode.Space)){
+                // 調查中
                 investigation_UI.SetActive(true);
+                
+                // 不顯示提示UI
+                show_hint = false;
 
                 // 開啟 button 點擊功能
                 // investigation_UI.transform.Find("Button").GetComponent<Button>().interactable = true;
@@ -116,7 +113,11 @@ public class Light_Trigger : MonoBehaviour
 
             // 按下 esc 關閉調查介面(調查介面有開啟時才有效)
             else if (investigation_UI.activeSelf && Input.GetKeyDown(KeyCode.Space)) {
+                // 調查結束
                 investigation_UI.SetActive(false);
+
+                // 顯示提示 UI
+                show_hint = false;
 
                 // 關閉 button 點擊功能(避免玩家重複觸發)
                 button_UI.GetComponent<Button>().interactable = false;
