@@ -27,6 +27,9 @@ public class Switch_Camera_Bookshelf : MonoBehaviour
     private Vector3 original_position_btn = new Vector3(35f, 649f, 0f);
     private Vector3 invastigate_position_btn = new Vector3(35f, 444f, 0f);
 
+    // 是否顯示提示 UI
+    public bool show_hint = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,12 +42,20 @@ public class Switch_Camera_Bookshelf : MonoBehaviour
         float dist = (Vector3.Distance(player.transform.position, gameObject.transform.position));
         
         // 距離小書架足夠近
-        if (dist < trigger_dist && Input.GetKeyDown(KeyCode.Space)) {
-            Investigate_Bookshelf();
+        if (dist < trigger_dist) {
+            // 顯示提示 UI
+            show_hint = true;
+
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Start_Investigation();
+            }
+        }
+        else {
+            show_hint = false;
         }
     }
 
-    void Investigate_Bookshelf() {
+    void Start_Investigation() {
         // 按下 space 進入調查畫面
         if (!invastigate_bookshelf) {
             // 正在進行調查
@@ -74,6 +85,9 @@ public class Switch_Camera_Bookshelf : MonoBehaviour
     public void End_Investigation () {
         // 沒有在進行調查
         invastigate_bookshelf = false;
+
+        // 不顯示提示 UI
+        show_hint = false;
         
         // 切換攝影機
         player_camera.SetActive(true);

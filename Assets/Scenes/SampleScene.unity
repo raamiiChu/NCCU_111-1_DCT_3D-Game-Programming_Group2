@@ -140,7 +140,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &10591702
 BoxCollider:
@@ -768,6 +768,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62899695}
   m_CullTransparentMesh: 1
+--- !u!1 &80846830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80846832}
+  - component: {fileID: 80846831}
+  m_Layer: 0
+  m_Name: Hint_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &80846831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80846830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37796f772c2518b40935e5d311e92329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 146618236}
+  - {fileID: 815216174}
+  bookshelfs:
+  - {fileID: 354168038}
+  hint_space: {fileID: 95589655}
+--- !u!4 &80846832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80846830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.3400006, y: -0.97, z: 1.8500011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &95589655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,8 +1250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger_dist: 5
   player: {fileID: 132212075}
-  hint_space: {fileID: 95589655}
   investigation_UI: {fileID: 2078947446}
+  show_hint: 0
   cam: {fileID: 963194227}
 --- !u!54 &146618237
 Rigidbody:
@@ -1477,6 +1527,7 @@ MonoBehaviour:
   bookshelf_camera: {fileID: 2045805153}
   btn: {fileID: 25371302}
   trigger_dist: 5
+  show_hint: 0
 --- !u!1 &542712687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,7 +2065,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &776870964
 BoxCollider:
@@ -2130,8 +2181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger_dist: 2.68
   player: {fileID: 132212075}
-  hint_space: {fileID: 95589655}
   investigation_UI: {fileID: 1208711358}
+  show_hint: 0
   cam: {fileID: 963194227}
 --- !u!54 &815216175
 Rigidbody:
@@ -3595,7 +3646,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1705575100
 BoxCollider:
