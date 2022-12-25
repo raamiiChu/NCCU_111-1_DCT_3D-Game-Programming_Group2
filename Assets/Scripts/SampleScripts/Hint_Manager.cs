@@ -26,6 +26,9 @@ public class Hint_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 系統建議新增的
+        DOTween.SetTweensCapacity(500, 50);
+
         // 初始化 save_hint_show (裡面的變數皆為 "false")
         // 視需求進行修改
         foreach (Light_Trigger item in items) {
@@ -59,6 +62,6 @@ public class Hint_Manager : MonoBehaviour
             hint_space.transform.DOLocalMove(original_position_hint_space, 1f);
             hint_space.transform.DOScaleX(0.2f, 1f);
         }
-        
+
     }
 }

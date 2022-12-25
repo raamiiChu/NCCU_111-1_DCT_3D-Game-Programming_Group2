@@ -87,6 +87,16 @@
   跟 Show_Bookshelf_Item 連動
   
 
+## Pick_Item  
+### 概要  
+- 點擊物件將其加入物品欄    
+### 位置  
+- Pick_Item  
+### 參數
+- item_box  
+  物品欄 UI  
+
+
 ## Shake_On_Click
 ### 概要  
 - 點擊後物件會震動
