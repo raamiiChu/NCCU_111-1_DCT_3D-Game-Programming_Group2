@@ -38,8 +38,6 @@ public class YouthGameManager : MonoBehaviour
         // 紀錄玩家位置
         pos_player = player.transform.position;
 
-        pos_player.y = 3f;
-
         // 檢查是否掉到地圖外
         if (player.transform.position.y < -5f ){
             Teleport_To_Spwan_Point();
@@ -85,6 +83,7 @@ public class YouthGameManager : MonoBehaviour
         
         // 傳送回重生點
         player.transform.position = spwan_point; 
+        player.transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;
