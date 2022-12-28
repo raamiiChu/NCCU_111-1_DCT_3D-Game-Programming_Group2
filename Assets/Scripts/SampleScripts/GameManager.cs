@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
         
         // 傳送回重生點
         player.transform.position = spwan_point;
+        player.transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;
