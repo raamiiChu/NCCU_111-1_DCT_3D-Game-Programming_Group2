@@ -202,6 +202,14 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if(lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         #region Camera
 
         // Control camera movement
