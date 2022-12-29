@@ -20,8 +20,6 @@
 ### 參數
 - player  
   玩家
-- move speed  
-  移動速度
 
 
 ## Hint_Manager  
@@ -61,6 +59,12 @@
 ### 參數
 - trigger dist  
   觸發發光的距離
+- view_x_range / view_y_range  
+  視野範圍  
+  可以搭配 74 行的 
+  ```
+  Debug.Log(view_pos);
+  ```  
 - player  
   玩家
 - hint space

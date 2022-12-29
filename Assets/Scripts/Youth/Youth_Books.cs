@@ -4,22 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class Youth_Light_Trigger_Books : MonoBehaviour
+public class Youth_Books : MonoBehaviour
 {
     // 最遠觸發距離
     public float trigger_dist;
+
+    // 視野範圍
+    public float[] view_x_range = {0.2f, 0.5f};
+    public float[] view_y_range = {0.45f, 0.9f};
 
     // 玩家
     public GameObject player;
 
     // 玩家位置
-    Vector3 pos_player;
+    private Vector3 pos_player;
 
     // 玩家物理特性
-    Rigidbody player_rigidbody;
+    private Rigidbody player_rigidbody;
 
     // 發光物位置
-    Vector3 pos_item;
+    private Vector3 pos_item;
 
     // 發光物的光環
     // Component halo;
@@ -29,6 +33,9 @@ public class Youth_Light_Trigger_Books : MonoBehaviour
 
     // 是否顯示提示 UI
     public bool show_hint = false;
+
+    // 是否滿足前置條件
+    public bool precondition = false;
 
     // 是否能調查
     private bool enable_investigate;
@@ -53,7 +60,16 @@ public class Youth_Light_Trigger_Books : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
+    {
+        precondition = true;
+        // 前置條件達成
+        if (precondition) {
+            Investigate_Books();
+        }
+    }
+
+    void Investigate_Books() 
     {
         // 紀錄玩家位置
         pos_player = player.transform.position;
@@ -65,8 +81,8 @@ public class Youth_Light_Trigger_Books : MonoBehaviour
         Vector3 view_pos = cam.WorldToViewportPoint(gameObject.transform.position);
 
         // 紀錄是否在螢幕指定範圍內
-        bool in_screen = (0.2f < view_pos.x && view_pos.x < 0.7f) &&  (0.9f < view_pos.y && view_pos.y < 1.2f);
-        
+        bool in_screen = (view_x_range[0] < view_pos.x && view_pos.x < view_x_range[1]) &&  (view_y_range[0] < view_pos.y && view_pos.y < view_y_range[1]);
+
         // 距離夠近且位於螢幕指定範圍內
         if (dist > trigger_dist && in_screen) {
             // 可調查、顯示提示 UI
@@ -116,6 +132,9 @@ public class Youth_Light_Trigger_Books : MonoBehaviour
 
                 // 鎖住玩家位置
                 player_rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+                player.GetComponent<FirstPersonController>().playerCanMove = false;
+                player.GetComponent<FirstPersonController>().cameraCanMove = false;
+                player.GetComponent<FirstPersonController>().lockCursor = false;
             }
 
             // 按下 esc 關閉調查介面(調查介面有開啟時才有效)
