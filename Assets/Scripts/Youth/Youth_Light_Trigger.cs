@@ -10,6 +10,10 @@ public class Youth_Light_Trigger : MonoBehaviour
     // 最遠觸發距離
     public float trigger_dist;
 
+    // 視野範圍
+    public float[] view_x_range = {0.4f, 0.6f};
+    public float[] view_y_range = {0.4f, 0.6f};
+
     // 玩家
     public GameObject player;
 
@@ -70,7 +74,7 @@ public class Youth_Light_Trigger : MonoBehaviour
         Vector3 view_pos = cam.WorldToViewportPoint(gameObject.transform.position);
 
         // 紀錄是否在螢幕指定範圍內
-        bool in_screen = (0.3f < view_pos.x && view_pos.x < 0.7f) &&  (0.1f < view_pos.y && view_pos.y < 0.45f);
+        bool in_screen = (view_x_range[0] < view_pos.x && view_pos.x < view_x_range[1]) &&  (view_y_range[0] < view_pos.y && view_pos.y < view_y_range[1]);
 
         // 距離夠近且位於螢幕指定範圍內
         if (dist < trigger_dist && in_screen) {
@@ -111,6 +115,9 @@ public class Youth_Light_Trigger : MonoBehaviour
 
                 // 鎖住玩家位置
                 player_rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+                player.GetComponent<FirstPersonController>().playerCanMove = false;
+                player.GetComponent<FirstPersonController>().cameraCanMove = false;
+                player.GetComponent<FirstPersonController>().lockCursor = false;
             }
 
             // 按下 esc 關閉調查介面(調查介面有開啟時才有效)
