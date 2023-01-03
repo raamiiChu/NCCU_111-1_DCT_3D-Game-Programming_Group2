@@ -29,6 +29,7 @@ public class Shake_On_Click : MonoBehaviour
     {
         // 執行晃動動畫
         StartCoroutine(Do_Shake());
+        GameManager.count += 1;
     }
 
     IEnumerator Do_Shake()
