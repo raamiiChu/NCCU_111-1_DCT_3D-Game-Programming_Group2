@@ -1285,6 +1285,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger_dist: 5
+  view_x_range:
+  - 0.4
+  - 0.6
+  view_y_range:
+  - 0.4
+  - 0.6
   player: {fileID: 1500329855}
   investigation_UI: {fileID: 2078947446}
   show_hint: 0
@@ -2409,6 +2415,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger_dist: 2.68
+  view_x_range:
+  - 0.4
+  - 0.6
+  view_y_range:
+  - 0.4
+  - 0.6
   player: {fileID: 1500329855}
   investigation_UI: {fileID: 1208711358}
   show_hint: 0
@@ -3737,6 +3749,10 @@ PrefabInstance:
     - target: {fileID: 4062297774143756945, guid: 6d5f82c92fde140a28673f526eda3698, type: 3}
       propertyPath: crosshair
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 6d5f82c92fde140a28673f526eda3698, type: 3}
+      propertyPath: walkSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4062297774143756945, guid: 6d5f82c92fde140a28673f526eda3698, type: 3}
       propertyPath: enableJump
@@ -5390,7 +5406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1500329855}
-  moveSpeed: 5
 --- !u!65 &2133511438
 BoxCollider:
   m_ObjectHideFlags: 0

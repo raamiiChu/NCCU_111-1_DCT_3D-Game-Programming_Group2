@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+using System.Linq;
 
 public class Youth_Books : MonoBehaviour
 {
@@ -34,14 +34,23 @@ public class Youth_Books : MonoBehaviour
     // 是否顯示提示 UI
     public bool show_hint = false;
 
+    public GameObject bookshelf;
+
     // 是否滿足前置條件
-    public bool precondition = false;
+    public Dictionary<string, bool> preconditions = new Dictionary<string, bool>() 
+    { 
+        { "couverture", false }, 
+        { "Board.002", false }, 
+        { "Leaflet (1)", false }
+    };
 
     // 是否能調查
     private bool enable_investigate;
 
-    // 玩家相機
+    // 相機
     public Camera cam;
+    public GameObject main_cam; 
+    public GameObject books_cam;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +71,8 @@ public class Youth_Books : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        precondition = true;
         // 前置條件達成
-        if (precondition) {
+        if (preconditions.Values.All(ele => ele == true)) {
             Investigate_Books();
         }
     }
@@ -87,13 +95,18 @@ public class Youth_Books : MonoBehaviour
         if (dist > trigger_dist && in_screen) {
             // 可調查、顯示提示 UI
             enable_investigate = true;
-            show_hint = true;
+
+            if (!investigation_UI.activeSelf) {
+                show_hint = true;
+            }
 
             // 發光
-            for (int i = 0; i < gameObject.transform.childCount; i++) {
-                // 紀錄發光物的材質
-                Material mat = gameObject.transform.GetChild(i).GetComponent<Renderer>().material;                
-                mat.EnableKeyword("_EMISSION");
+            if (!investigation_UI.activeSelf) {
+                for (int i = 0; i < gameObject.transform.childCount; i++) {
+                    // 紀錄發光物的材質
+                    Material mat = gameObject.transform.GetChild(i).GetComponent<Renderer>().material;                
+                    mat.EnableKeyword("_EMISSION");
+                }
             }
             
             // halo.GetType().GetProperty("enabled").SetValue(halo, true);
@@ -126,6 +139,23 @@ public class Youth_Books : MonoBehaviour
                 // 不顯示提示UI
                 show_hint = false;
 
+                // 關閉 bookshelf 的 BoxCollider (否則玩家無法點擊到書本)
+                bookshelf.GetComponent<BoxCollider>().enabled = false;
+
+                // 開啟管理書本功能
+                gameObject.GetComponent<Youth_Books_Manager>().enabled = true;
+
+                // 切換攝影機
+                main_cam.SetActive(false);
+                books_cam.SetActive(true);
+
+                // 取消發光
+                for (int i = 0; i < gameObject.transform.childCount; i++) {
+                    // 紀錄發光物的材質
+                    Material mat = gameObject.transform.GetChild(i).GetComponent<Renderer>().material;
+                    mat.DisableKeyword("_EMISSION");
+                }
+
                 // 開啟 button 點擊功能
                 // investigation_UI.transform.Find("Button").GetComponent<Button>().interactable = true;
                 button_UI.GetComponent<Button>().interactable = true;
@@ -144,6 +174,16 @@ public class Youth_Books : MonoBehaviour
 
                 // 顯示提示 UI
                 show_hint = false;
+
+                // 開啟 bookshelf 的 BoxCollider (否則玩家會穿過書架)
+                bookshelf.GetComponent<BoxCollider>().enabled = true;
+
+                // 關閉管理書本功能
+                gameObject.GetComponent<Youth_Books_Manager>().enabled = false;
+
+                // 切換攝影機
+                main_cam.SetActive(true);
+                books_cam.SetActive(false);
 
                 // 關閉 button 點擊功能(避免玩家重複觸發)
                 button_UI.GetComponent<Button>().interactable = false;
