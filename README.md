@@ -20,8 +20,17 @@
 ### 參數
 - player  
   玩家
-- move speed  
-  移動速度
+
+
+## Hint_Manager  
+### 概要  
+- 顯示提示 UI (按下 space 調查)  
+### 位置  
+- Hint_Manager  
+### 參數 
+以下變數可視需求新增 **(請確保程式碼中有 hint_show 變數)**
+- items  
+- bookshelfs  
 
 
 ## Input_Password
@@ -50,10 +59,23 @@
 ### 參數
 - trigger dist  
   觸發發光的距離
+- view_x_range / view_y_range  
+  視野範圍  
+  可以搭配 74 行的 
+  ```
+  Debug.Log(view_pos);
+  ```  
 - player  
   玩家
+- hint space
+  提示UI
 - investigation UI  
   調查 UI 介面
+- show hint
+  是否顯示提示 UI
+  跟 Hint_Manager 連動
+- cam
+  玩家攝影機
 
 
 ## Mouse_Drag
@@ -82,6 +104,16 @@
 - correct spot **(請勿手動調整)**  
   跟 Show_Bookshelf_Item 連動
   
+
+## Pick_Item  
+### 概要  
+- 點擊物件將其加入物品欄    
+### 位置  
+- Pick_Item  
+### 參數
+- item_box  
+  物品欄 UI  
+
 
 ## Shake_On_Click
 ### 概要  
@@ -128,6 +160,9 @@
   退出按鈕
 - trigger dist  
   觸發發光的距離
+- show hint
+  是否顯示提示 UI
+  跟 Hint_Manager 連動
 
 
 ## Teleport_On_Click  
