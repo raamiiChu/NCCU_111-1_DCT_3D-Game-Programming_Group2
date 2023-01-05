@@ -23,6 +23,15 @@ public class GameManager : MonoBehaviour
     // 玩家物理屬性
     Rigidbody player_rigidbody;
 
+    //玩家試錯次數
+     public static int count = 0;
+
+     //開燈提示
+     public GameObject light_hint;
+     public GameObject light;
+     private float timer = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +69,22 @@ public class GameManager : MonoBehaviour
                 player.transform.Translate(moveSpeed*Time.deltaTime, 0, 0);
             }
         }
+
+        //檢查玩家試錯次數，達兩次跳出提示
+         if (count == 3) {
+
+             timer += Time.deltaTime;
+             if (timer >= 1.5) {
+                 light_hint.SetActive(true);
+                 light.SetActive(true);
+             } 
+
+             if (timer >= 6) {
+                 light_hint.SetActive(false);
+
+             }
+         }
+
     }
 
     // 按鈕事件(onClick)
