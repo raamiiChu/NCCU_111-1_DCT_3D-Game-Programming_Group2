@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //檢查玩家試錯次數，達兩次跳出提示
+        //現在房間：檢查玩家試錯次數，達兩次跳出提示
         if (count == 3) {
             
             timer += Time.deltaTime;

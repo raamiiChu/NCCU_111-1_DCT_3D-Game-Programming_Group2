@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class lightSwitch : MonoBehaviour
 {   
+    public Material monster;
+    public Material redWall;
     public GameObject wall;
+    public GameObject real1;
+    public GameObject real2;
+    public GameObject real3;
+    public GameObject real4;
+    public GameObject real5;
     private Material wallMaterial;
+    private GameObject[] redObjects;
+    private GameObject[] walls;
+    
     // Start is called before the first frame update
 
     void Start()
     {
-         wallMaterial = wall.GetComponent<MeshRenderer>().material;
-        
+         redObjects = GameObject.FindGameObjectsWithTag("Red");
+         walls = GameObject.FindGameObjectsWithTag("Wall");
     }
 
     // Update is called once per frame
@@ -23,6 +33,21 @@ public class lightSwitch : MonoBehaviour
      void OnMouseDown()
     {
         // 更換牆壁的材質
-        wallMaterial.color = Color.red;
+        wall.GetComponent<MeshRenderer>().material = monster;
+        for (int j = 0; j < walls.Length; j++) {
+            walls[j].GetComponent<MeshRenderer>().material = redWall;
+        }
+
+        // 將初始紅色物件關閉
+        for (int i = 0; i < redObjects.Length; i++) {
+            redObjects[i].SetActive(false);
+        }
+        // 將提示物件開啟，因為tag只能用在active物件上，所以用暴力解法
+        real1.SetActive(true);
+        real2.SetActive(true);
+        real3.SetActive(true);
+        real4.SetActive(true);
+        real5.SetActive(true);
+       
     }
 }
