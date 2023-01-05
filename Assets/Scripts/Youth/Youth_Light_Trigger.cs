@@ -44,6 +44,9 @@ public class Youth_Light_Trigger : MonoBehaviour
     // 玩家相機
     public Camera cam;
 
+    // Youth_Books腳本
+    public Youth_Books youth_books;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,9 +72,11 @@ public class Youth_Light_Trigger : MonoBehaviour
 
         // 計算玩家與發光物的距離
         float dist = (Vector3.Distance(pos_player, pos_item));
+        // Debug.Log(dist);
 
         // 紀錄物件在螢幕中的座標
         Vector3 view_pos = cam.WorldToViewportPoint(gameObject.transform.position);
+        // Debug.Log(view_pos);
 
         // 紀錄是否在螢幕指定範圍內
         bool in_screen = (view_x_range[0] < view_pos.x && view_pos.x < view_x_range[1]) &&  (view_y_range[0] < view_pos.y && view_pos.y < view_y_range[1]);
@@ -80,7 +85,10 @@ public class Youth_Light_Trigger : MonoBehaviour
         if (dist < trigger_dist && in_screen) {
             // 可調查、顯示提示 UI
             enable_investigate = true;
-            show_hint = true;
+
+            if (!investigation_UI.activeSelf) {
+                show_hint = true;
+            }
 
             // 發光
             mat.EnableKeyword("_EMISSION");
@@ -109,6 +117,9 @@ public class Youth_Light_Trigger : MonoBehaviour
                 // 不顯示提示UI
                 show_hint = false;
 
+                // 修改前置條件 (Youth_Books)
+                youth_books.preconditions[gameObject.name] = true;
+
                 // 開啟 button 點擊功能
                 // investigation_UI.transform.Find("Button").GetComponent<Button>().interactable = true;
                 button_UI.GetComponent<Button>().interactable = true;
@@ -126,7 +137,7 @@ public class Youth_Light_Trigger : MonoBehaviour
                 investigation_UI.SetActive(false);
 
                 // 顯示提示 UI
-                show_hint = false;
+                show_hint = true;
 
                 // 關閉 button 點擊功能(避免玩家重複觸發)
                 button_UI.GetComponent<Button>().interactable = false;
