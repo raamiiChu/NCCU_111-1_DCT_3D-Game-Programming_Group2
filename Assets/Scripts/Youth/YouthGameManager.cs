@@ -12,6 +12,7 @@ public class YouthGameManager : MonoBehaviour
 
     // 玩家重生點
     private Vector3 spwan_point;
+    private Quaternion spwan_rotation;
 
     // 玩家位置
     Vector3 pos_player;
@@ -24,6 +25,7 @@ public class YouthGameManager : MonoBehaviour
     {
         // 紀錄玩家重生點
         spwan_point = player.transform.position;
+        spwan_rotation = player.transform.rotation;
 
         // 紀錄玩家物理特性
         player_rigidbody = player.GetComponent<Rigidbody>();
@@ -70,7 +72,7 @@ public class YouthGameManager : MonoBehaviour
         
         // 傳送回重生點
         player.transform.position = spwan_point; 
-        player.transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
+        player.transform.rotation = spwan_rotation;
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;

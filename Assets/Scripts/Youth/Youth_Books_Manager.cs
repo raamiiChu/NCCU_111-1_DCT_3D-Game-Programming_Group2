@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Youth_Books_Manager : MonoBehaviour
 {
@@ -67,6 +68,13 @@ public class Youth_Books_Manager : MonoBehaviour
             gameObject.SetActive(false);
 
             trophy.transform.DOLocalMove(new Vector3(-4.884f, 5.274f, 11.161f), 1f);
+            
+            // 10 秒後切換場景
+            Invoke("Switch_Scene", 10f);
         }
+    }
+
+    void Switch_Scene() {
+        SceneManager.LoadScene(1);
     }
 }
