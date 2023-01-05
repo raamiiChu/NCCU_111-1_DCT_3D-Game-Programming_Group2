@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     //開燈提示
     public GameObject light_hint;
-    public GameObject light;
+    public GameObject light_1;
     private float timer = 0;
 
     // Start is called before the first frame update
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.5) {
                 light_hint.SetActive(true);
-                light.SetActive(true);
+                light_1.SetActive(true);
             } 
 
             if (timer >= 6) {
