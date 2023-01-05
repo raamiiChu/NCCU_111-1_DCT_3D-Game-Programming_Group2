@@ -6,6 +6,9 @@ using DG.Tweening;
 
 public class Youth_Books_Manager : MonoBehaviour
 {
+    // 獎盃
+    public GameObject trophy;
+
     // 紀錄選取的書籍
     public List<GameObject> choose_book = new List<GameObject> {};
 
@@ -62,6 +65,8 @@ public class Youth_Books_Manager : MonoBehaviour
         // 如果位置全部正確，則顯示獎盃
         if (spot_correct.Values.Count(ele => ele == true) == 20) {
             gameObject.SetActive(false);
+
+            trophy.transform.DOLocalMove(new Vector3(-4.884f, 5.274f, 11.161f), 1f);
         }
     }
 }
