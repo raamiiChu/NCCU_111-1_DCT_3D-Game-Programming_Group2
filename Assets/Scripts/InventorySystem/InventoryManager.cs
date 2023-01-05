@@ -107,6 +107,7 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.Log("Pick");
             nowImage.transform.parent.GetComponent<ItemDrop>().spawnObj =  spawnRectangle;
+           
         }
         else if (objectName == "triangle")
         {

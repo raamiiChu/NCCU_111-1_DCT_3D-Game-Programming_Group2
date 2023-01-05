@@ -15,6 +15,7 @@ public class ItemDrop : MonoBehaviour
         private GameObject followObj;
       public void Update()
       {
+        
         //   if (Input.GetKeyDown(KeyCode.Space))
         //   {
         //       attachedToMouse = false;
@@ -35,6 +36,7 @@ public class ItemDrop : MonoBehaviour
             if(hit.transform.name == "Box"){
               Debug.Log("BOX Did Hit🔥");
               Destroy(followObj);
+  
             }
             
           }

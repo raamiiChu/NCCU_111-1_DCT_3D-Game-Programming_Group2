@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 4062297774143756944}
   - component: {fileID: 4062297774143756945}
   m_Layer: 0
-  m_Name: FirstPersonController
+  m_Name: childrenroom_FirstPersonController
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
