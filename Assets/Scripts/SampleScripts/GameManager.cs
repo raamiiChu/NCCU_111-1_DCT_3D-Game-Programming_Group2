@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
+// test git push
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     // 玩家重生點
     private Vector3 spwan_point;
+
+    // 移動速度
+    public float moveSpeed = 5f;
 
     // 玩家位置
     Vector3 pos_player;
@@ -42,9 +46,19 @@ public class GameManager : MonoBehaviour
 
         // 檢查玩家位置是否處於凍結狀態
         if (player_rigidbody.constraints == RigidbodyConstraints.None) {
-            player.GetComponent<FirstPersonController>().playerCanMove = true;
-            player.GetComponent<FirstPersonController>().cameraCanMove = true;
-            player.GetComponent<FirstPersonController>().lockCursor = true;
+            // 基礎移動(之後會改)
+            if (Input.GetKey(KeyCode.W)) {
+                player.transform.Translate(0f, 0f, moveSpeed*Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.A)) {
+                player.transform.Translate(-1 * moveSpeed*Time.deltaTime, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.S)) {
+                player.transform.Translate(0f, 0, -1 * moveSpeed*Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.D)) {
+                player.transform.Translate(moveSpeed*Time.deltaTime, 0, 0);
+            }
         }
     }
 
@@ -70,7 +84,6 @@ public class GameManager : MonoBehaviour
         
         // 傳送回重生點
         player.transform.position = spwan_point;
-        player.transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;

@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - Red
+  - Real
+  - Wall
+=======
   - Book
+>>>>>>> 9a6577b5a167c44ce6415bae4f3c5d9a9e2fa6f4
   layers:
   - Default
   - TransparentFX
