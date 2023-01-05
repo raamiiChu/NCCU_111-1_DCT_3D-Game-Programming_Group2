@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ItemDrop : MonoBehaviour
 {
-      public InventoryManager inventoryManager;
       public Item Item;
       public bool attachedToMouse = true;
       public float zDist;
@@ -36,21 +35,10 @@ public class ItemDrop : MonoBehaviour
             if(hit.transform.name == "Box"){
               Debug.Log("BOX Did Hit🔥");
               Destroy(followObj);
-  
+              Destroy(gameObject);
             }
             
           }
-          else
-          {
-            //Debug.Log("Did not Hit");
-            
-          }
-        //    print("I'm looking at " + hit.transform.name);
-        //else
-        //  print("I'm looking at nothing!");
-              
-              //Vector3 pos = new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane);
-            //   point.z = transform.position.z;
             //   point.y = transform.position.y;
               followObj.transform.position = point;
           }
