@@ -24,13 +24,12 @@ public class GameManager : MonoBehaviour
     Rigidbody player_rigidbody;
 
     //玩家試錯次數
-     public static int count = 0;
+    public static int count = 0;
 
-     //開燈提示
-     public GameObject light_hint;
-     public GameObject light;
-     private float timer = 0;
-
+    //開燈提示
+    public GameObject light_hint;
+    public GameObject light;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +48,7 @@ public class GameManager : MonoBehaviour
         pos_player = player.transform.position;
 
         // 檢查是否掉到地圖外
-        if (player.transform.position.y < -5f ){
+        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.R)){
             Teleport_To_Spwan_Point();
         }
 
@@ -67,6 +66,24 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D)) {
                 player.transform.Translate(moveSpeed*Time.deltaTime, 0, 0);
+            }
+            // player.GetComponent<FirstPersonController>().playerCanMove = true;
+            // player.GetComponent<FirstPersonController>().cameraCanMove = true;
+            // player.GetComponent<FirstPersonController>().lockCursor = true;
+        }
+
+        //檢查玩家試錯次數，達兩次跳出提示
+        if (count == 3) {
+
+            timer += Time.deltaTime;
+            if (timer >= 1.5) {
+                light_hint.SetActive(true);
+                light.SetActive(true);
+            } 
+
+            if (timer >= 6) {
+                light_hint.SetActive(false);
+
             }
         }
 
