@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     // 玩家物理屬性
     Rigidbody player_rigidbody;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,3 +94,4 @@ public class GameManager : MonoBehaviour
     }
 
 }
+
