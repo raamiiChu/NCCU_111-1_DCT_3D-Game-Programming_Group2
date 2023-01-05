@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         pos_player = player.transform.position;
 
         // 檢查是否掉到地圖外
-        if (player.transform.position.y < -5f ){
+        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.R)){
             Teleport_To_Spwan_Point();
         }
 
@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour
             if (Input.GetKey(KeyCode.D)) {
                 player.transform.Translate(moveSpeed*Time.deltaTime, 0, 0);
             }
+            // player.GetComponent<FirstPersonController>().playerCanMove = true;
+            // player.GetComponent<FirstPersonController>().cameraCanMove = true;
+            // player.GetComponent<FirstPersonController>().lockCursor = true;
         }
 
         //檢查玩家試錯次數，達兩次跳出提示
