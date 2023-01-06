@@ -9,7 +9,6 @@ public class Hint_Manager : MonoBehaviour
     // 所有可調查物件(會去抓該物件底下的程式碼)
     // 視需求新增變數
     public Light_Trigger[] items;
-    public Switch_Camera_Bookshelf[] bookshelfs;
 
     // 存放調查物件是否符合顯示 UI 的條件
     // {"遊戲物件名稱": 布林值}
@@ -34,9 +33,6 @@ public class Hint_Manager : MonoBehaviour
         foreach (Light_Trigger item in items) {
             save_hint_show.Add(item.name, false);
         }
-        foreach (Switch_Camera_Bookshelf bookshelf in bookshelfs) {
-            save_hint_show.Add(bookshelf.name, false);
-        }
     }
 
     // Update is called once per frame
@@ -46,9 +42,6 @@ public class Hint_Manager : MonoBehaviour
         // 視需求進行修改
         foreach (Light_Trigger item in items) {
             save_hint_show[item.name] = item.show_hint;
-        }
-        foreach (Switch_Camera_Bookshelf bookshelf in bookshelfs) {
-            save_hint_show[bookshelf.name] = bookshelf.show_hint;
         }
 
         // 偵測是否有任何物件符合條件
