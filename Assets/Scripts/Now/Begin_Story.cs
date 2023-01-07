@@ -19,9 +19,8 @@ public class Begin_Story : MonoBehaviour
     {
         // 按下 space 開始此關卡
         if (Input.GetKeyDown(KeyCode.Space)) {
-            intro.SetActive(false);
-
-            gameObject.GetComponent<GameManager>().enabled = true;
+            intro.SetActive(false); 
+            gameObject.GetComponent<GameManager> ().enabled = true;
         }
         
     }
