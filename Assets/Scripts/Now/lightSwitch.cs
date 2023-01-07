@@ -14,6 +14,7 @@ public class lightSwitch : MonoBehaviour
     public GameObject real5;
     public GameObject real6;
     public GameObject talk3;
+    public GameObject movie1;
     private Material wallMaterial;
     private GameObject[] redObjects;
     private GameObject[] walls;
@@ -53,6 +54,7 @@ public class lightSwitch : MonoBehaviour
         real5.SetActive(true);
         real6.SetActive(true);
         talk3.SetActive(true);
+        movie1.SetActive(true);
         Invoke("destroyTalk", 5.0f);
        
     }

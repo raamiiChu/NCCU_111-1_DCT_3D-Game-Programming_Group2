@@ -45,7 +45,7 @@ public class Input_Password : MonoBehaviour
         input_UI.SetActive(false);
         
         // 正確
-        if (your_input == "1234") {
+        if (your_input == "FREE55") {
             correct.SetActive(true);
         }
         // 錯誤
