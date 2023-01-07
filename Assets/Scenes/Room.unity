@@ -146,6 +146,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 7.773
       objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: enableJump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: enableZoom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: enableCrouch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: enableSprint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: useSprintBar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062297774143756945, guid: 104145b728647ee46a2e56db24366a25, type: 3}
+      propertyPath: enableHeadBob
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4062297774143756951, guid: 104145b728647ee46a2e56db24366a25, type: 3}
       propertyPath: m_RootOrder
       value: 2

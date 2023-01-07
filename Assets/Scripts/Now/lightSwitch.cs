@@ -16,6 +16,7 @@ public class lightSwitch : MonoBehaviour
     private Material wallMaterial;
     private GameObject[] redObjects;
     private GameObject[] walls;
+    private float timer = 0;
     
     // Start is called before the first frame update
 
@@ -50,6 +51,12 @@ public class lightSwitch : MonoBehaviour
         real4.SetActive(true);
         real5.SetActive(true);
         talk3.SetActive(true);
+        Invoke("destroyTalk", 5.0f);
        
     }
+
+     private void destroyTalk() {
+         talk3.SetActive(false);
+     }
+   
 }
