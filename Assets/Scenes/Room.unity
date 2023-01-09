@@ -1969,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1434602835
 Transform:
   m_ObjectHideFlags: 0
@@ -2750,11 +2750,11 @@ GameObject:
   - component: {fileID: 1729734017}
   m_Layer: 0
   m_Name: WallC
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1729734016
 Transform:
   m_ObjectHideFlags: 0
@@ -8902,7 +8902,7 @@ MonoBehaviour:
   real5: {fileID: 1398558205678972952}
   real6: {fileID: 6146866107417358659}
   talk3: {fileID: 407597670}
-  movie1: {fileID: 1184438548}
+  wallMovie: {fileID: 1434602834}
 --- !u!65 &8707273951708065091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9290,7 +9290,7 @@ GameObject:
   - component: {fileID: 7773941485468303295}
   m_Layer: 0
   m_Name: Wallshelf.002
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
