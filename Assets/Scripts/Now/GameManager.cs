@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject lightButton;
     private float timer = 0;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,21 +87,6 @@ public class GameManager : MonoBehaviour
 
             }
         }
-
-        //檢查玩家試錯次數，達兩次跳出提示
-         if (count == 3) {
-
-             timer += Time.deltaTime;
-             if (timer >= 1.5) {
-                 light_hint.SetActive(true);
-                 lightButton.SetActive(true);
-             } 
-
-             if (timer >= 6) {
-                 light_hint.SetActive(false);
-
-             }
-         }
 
     }
 
