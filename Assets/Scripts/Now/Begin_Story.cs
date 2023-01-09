@@ -6,11 +6,12 @@ public class Begin_Story : MonoBehaviour
 {
     // 開場獨白 UI
     public GameObject intro;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player.GetComponent<FirstPersonController>().enabled = false;
         
     }
 
@@ -21,6 +22,7 @@ public class Begin_Story : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             intro.SetActive(false); 
             gameObject.GetComponent<GameManager> ().enabled = true;
+            player.GetComponent<FirstPersonController>().enabled = true;
         }
         
     }
