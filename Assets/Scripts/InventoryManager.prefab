@@ -41,20 +41,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6431619564854884177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04053534e47684c71b2505b4fb2f8886, type: 3}
+  m_Script: {fileID: 11500000, guid: bbd91cd46fea5b2438544a047a8df183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
   ItemContent: {fileID: 0}
   InventoryItem: {fileID: 0}
-  spriteCircle: {fileID: 21300000, guid: 9e1ca4f1c780a40c6973edcbf209e0fd, type: 3}
-  spriteRectangle: {fileID: 21300000, guid: 3f61dafff874a4db882c3719721ed6ab, type: 3}
-  spriteTriangle: {fileID: 21300000, guid: b2f42fc3d1b0c45648c0f699f4b9d136, type: 3}
+  spriteCircle: {fileID: 0}
+  spriteRectangle: {fileID: 0}
+  spriteTriangle: {fileID: 0}
   image01: {fileID: 0}
   image02: {fileID: 0}
   image03: {fileID: 0}
-  spawnCircle: {fileID: 577259385126225307, guid: f99589d32e7f540eca30720e45f94921, type: 3}
-  spawnRectangle: {fileID: 1717992228285310797, guid: a9b1b761cdc5e4360b59257f3325b0d5, type: 3}
-  spawnTriangle: {fileID: 7554126883820939419, guid: a58c33430594e4aea863748815431bd1, type: 3}
+  spawnCircle: {fileID: 0}
+  spawnRectangle: {fileID: 0}
+  spawnTriangle: {fileID: 0}
   imageCount: 0
   nowImage: {fileID: 0}
