@@ -28,13 +28,11 @@ public class ReadInput : MonoBehaviour
 
         input = word;
         if (input == "FREE1314" || input == "free1314") {
-            Debug.Log("YESSS");
             passwordUI.SetActive(false);
             letter.SetActive(true);
             gameObject.GetComponent<GameManager> ().enabled = false;
             gameObject.GetComponent<End_Story> ().enabled = true;
         } else {
-            Debug.Log("NOOO:(");
             passwordUI.SetActive(false);
             WrongHint.SetActive(true);
             Invoke("Close_Result", 2f);

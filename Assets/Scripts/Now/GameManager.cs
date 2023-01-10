@@ -75,14 +75,12 @@ public class GameManager : MonoBehaviour
 
         //檢查玩家試錯次數，達兩次跳出提示
         if (count == 3) {
-
             timer += Time.deltaTime;
-            if (timer >= 1.5) {
+            if (timer >= 1) {
                 light_hint.SetActive(true);
                 lightButton.SetActive(true);
             } 
-
-            if (timer >= 6) {
+            if (timer >= 5) {
                 light_hint.SetActive(false);
 
             }
