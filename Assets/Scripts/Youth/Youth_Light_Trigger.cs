@@ -41,6 +41,9 @@ public class Youth_Light_Trigger : MonoBehaviour
     // 是否能調查
     private bool enable_investigate;
 
+    // 是否正在調查中
+    public bool is_investigating = false;
+
     // 玩家相機
     public Camera cam;
 
@@ -113,6 +116,7 @@ public class Youth_Light_Trigger : MonoBehaviour
             if (!investigation_UI.activeSelf && Input.GetKeyDown(KeyCode.Space)){
                 // 調查中
                 investigation_UI.SetActive(true);
+                is_investigating = true;
                 
                 // 不顯示提示UI
                 show_hint = false;
@@ -135,6 +139,7 @@ public class Youth_Light_Trigger : MonoBehaviour
             else if (investigation_UI.activeSelf && Input.GetKeyDown(KeyCode.Space)) {
                 // 調查結束
                 investigation_UI.SetActive(false);
+                is_investigating = false;
 
                 // 顯示提示 UI
                 show_hint = true;
