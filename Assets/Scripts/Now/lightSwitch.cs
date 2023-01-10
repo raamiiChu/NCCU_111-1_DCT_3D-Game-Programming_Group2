@@ -18,7 +18,6 @@ public class lightSwitch : MonoBehaviour
     private Material wallMaterial;
     private GameObject[] redObjects;
     private GameObject[] walls;
-    private float timer = 0;
     
     // Start is called before the first frame update
 
