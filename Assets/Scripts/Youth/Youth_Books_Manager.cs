@@ -10,6 +10,10 @@ public class Youth_Books_Manager : MonoBehaviour
     // 獎盃
     public GameObject trophy;
 
+    // UI
+    public GameObject trophy_UI;
+    public GameObject books_UI;
+
     // 紀錄選取的書籍
     public List<GameObject> choose_book = new List<GameObject> {};
 
@@ -68,8 +72,13 @@ public class Youth_Books_Manager : MonoBehaviour
 
             trophy.transform.DOLocalMove(new Vector3(-4.943f, 5.256f, 11.371f), 1f);
             
+            // 更換對話框
+            books_UI.SetActive(false);
+            trophy_UI.SetActive(true);
+
+
             // 10 秒後切換場景
-            Invoke("Switch_Scene", 10f);
+            Invoke("Switch_Scene", 7f);
         }
     }
 
