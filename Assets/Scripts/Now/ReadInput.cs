@@ -31,6 +31,8 @@ public class ReadInput : MonoBehaviour
             Debug.Log("YESSS");
             passwordUI.SetActive(false);
             letter.SetActive(true);
+            gameObject.GetComponent<GameManager> ().enabled = false;
+            gameObject.GetComponent<End_Story> ().enabled = true;
         } else {
             Debug.Log("NOOO:(");
             passwordUI.SetActive(false);
