@@ -8,7 +8,7 @@ public class Children_Hint: MonoBehaviour
 {
     // 所有可調查物件(會去抓該物件底下的程式碼)
     // 視需求新增變數
-    public Light_Trigger[] items;
+    public Child_Light_Trigger[] items;
     //public Youth_Books[] bookshelfs;
 
     // 存放調查物件是否符合顯示 UI 的條件
@@ -31,7 +31,7 @@ public class Children_Hint: MonoBehaviour
 
         // 初始化 save_hint_show (裡面的變數皆為 "false")
         // 視需求進行修改
-        foreach (Light_Trigger item in items) {
+        foreach (Child_Light_Trigger item in items) {
             save_hint_show.Add(item.name, false);
         }
         //foreach (Youth_Books bookshelf in bookshelfs) {
@@ -44,7 +44,7 @@ public class Children_Hint: MonoBehaviour
     {
         // 更新是否能顯示 UI
         // 視需求進行修改
-        foreach (Light_Trigger item in items) {
+        foreach (Child_Light_Trigger item in items) {
             save_hint_show[item.name] = item.show_hint;
         }
         //foreach (Youth_Books bookshelf in bookshelfs) {

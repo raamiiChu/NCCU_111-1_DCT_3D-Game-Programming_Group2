@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class Light_Trigger : MonoBehaviour
+public class Child_Light_Trigger : MonoBehaviour
 {
     // 最遠觸發距離
     public float trigger_dist;
@@ -99,7 +99,7 @@ public class Light_Trigger : MonoBehaviour
         // 檢查是否可調查
         if(enable_investigate) {
             // 調查介面中的 button
-            //Component button_UI  = investigation_UI.transform.Find("Button");
+            Component button_UI  = investigation_UI.transform.Find("Button");
 
             // 按下 space 開啟調查介面
             if (!investigation_UI.activeSelf && Input.GetKeyDown(KeyCode.Space)){
@@ -111,7 +111,7 @@ public class Light_Trigger : MonoBehaviour
 
                 // 開啟 button 點擊功能
                 // investigation_UI.transform.Find("Button").GetComponent<Button>().interactable = true;
-                //button_UI.GetComponent<Button>().interactable = true;
+             //   button_UI.GetComponent<Button>().interactable = true;
 
                 // 鎖住玩家位置
                 player_rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
@@ -129,7 +129,7 @@ public class Light_Trigger : MonoBehaviour
                 show_hint = false;
 
                 // 關閉 button 點擊功能(避免玩家重複觸發)
-                //button_UI.GetComponent<Button>().interactable = false;
+            //    button_UI.GetComponent<Button>().interactable = false;
 
                 // 解除鎖定玩家位置
                 player_rigidbody.constraints = RigidbodyConstraints.None;

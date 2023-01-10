@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shake_On_Click : MonoBehaviour
+public class Now_Shake_On_Click : MonoBehaviour
 {
     // 用於儲存晃動的原始位置
     private Vector3 original_position;
@@ -29,7 +29,7 @@ public class Shake_On_Click : MonoBehaviour
     {
         // 執行晃動動畫
         StartCoroutine(Do_Shake());
-        GameManager.count += 1;
+        Now_GameManager.count += 1;
     }
 
     IEnumerator Do_Shake()

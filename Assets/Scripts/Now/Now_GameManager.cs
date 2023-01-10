@@ -6,7 +6,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 // test git push
 
-public class GameManager : MonoBehaviour
+public class Now_GameManager : MonoBehaviour
 {
     // 玩家
     public GameObject player;
@@ -28,8 +28,9 @@ public class GameManager : MonoBehaviour
 
     //開燈提示
     public GameObject light_hint;
-    public GameObject light_1;
+    public GameObject lightButton;
     private float timer = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
         // 檢查玩家位置是否處於凍結狀態
         if (player_rigidbody.constraints == RigidbodyConstraints.None) {
             // 基礎移動(之後會改)
-            if (Input.GetKey(KeyCode.W)) {
+            /*if (Input.GetKey(KeyCode.W)) {
                 player.transform.Translate(0f, 0f, moveSpeed*Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.A)) {
@@ -66,10 +67,10 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D)) {
                 player.transform.Translate(moveSpeed*Time.deltaTime, 0, 0);
-            }
-            // player.GetComponent<FirstPersonController>().playerCanMove = true;
-            // player.GetComponent<FirstPersonController>().cameraCanMove = true;
-            // player.GetComponent<FirstPersonController>().lockCursor = true;
+            }*/
+            player.GetComponent<FirstPersonController>().playerCanMove = true;
+            player.GetComponent<FirstPersonController>().cameraCanMove = true;
+            player.GetComponent<FirstPersonController>().lockCursor = true;
         }
 
         //檢查玩家試錯次數，達兩次跳出提示
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.5) {
                 light_hint.SetActive(true);
-                light_1.SetActive(true);
+                lightButton.SetActive(true);
             } 
 
             if (timer >= 6) {
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
 
             }
         }
+
     }
 
     // 按鈕事件(onClick)
