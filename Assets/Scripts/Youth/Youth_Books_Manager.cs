@@ -80,8 +80,8 @@ public class Youth_Books_Manager : MonoBehaviour
             trophy_UI.SetActive(true);
 
 
-            // 10 秒後切換場景
-            Invoke("Switch_Scene", 7f);
+            // 5 秒後切換場景
+            Invoke("Switch_Scene", 5f);
         }
     }
 

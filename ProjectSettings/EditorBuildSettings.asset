@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Youth.unity
     guid: 163a73b6c14523543807459d0df835fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Room.unity
     guid: a8f16e0702bf142ba8e0c7fd1e5019a1
+  - enabled: 1
+    path: Assets/Scenes/NowRoom.unity
+    guid: e1b50bcd85f9cb04e9476a2c5770d15d
   m_configObjects: {}

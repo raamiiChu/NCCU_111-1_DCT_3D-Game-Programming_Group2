@@ -16,7 +16,6 @@ public class ItemDrop : MonoBehaviour
       public GameObject VideoPanels;
       public void Update()
       {
-        
         //   if (Input.GetKeyDown(KeyCode.Space))
         //   {
         //       attachedToMouse = false;
@@ -28,10 +27,10 @@ public class ItemDrop : MonoBehaviour
           if (followObj != null && attachedToMouse)
           {
               //Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, (transform.position.y - Camera.main.transform.position.y) , (transform.position.z - Camera.main.transform.position.z))); 
-          Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane + zDist));
-          Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-          //Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-          RaycastHit hit;
+            Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane + zDist));
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            //Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+            RaycastHit hit;
           if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
           {
             if(hit.transform.name == "Box"){
