@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/UIpics/SampleScene/提示/button.png.meta
+guid: 7e635adeb5a57f742a9b53b2e5f75d09
+========
 guid: e1abd06e604e1ec43a6690db8d850d9a
+>>>>>>>> 678832b4f5e6788860ed296536b64a6a3bb73b97:Assets/UIpics/SampleScene/提示/space 調查.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,18 +95,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
