@@ -70,8 +70,11 @@ public class Youth_Books_Manager : MonoBehaviour
         if (spot_correct.Values.Count(ele => ele == true) == 19) {
             gameObject.SetActive(false);
 
-            trophy.transform.DOLocalMove(new Vector3(-4.943f, 5.256f, 11.371f), 1f);
-            
+            if (trophy != null) {
+                trophy.transform.DOLocalMove(new Vector3(-4.943f, 5.256f, 11.371f), 1f);
+                DOTween.Kill(trophy);
+            }
+        
             // 更換對話框
             books_UI.SetActive(false);
             trophy_UI.SetActive(true);
@@ -83,6 +86,6 @@ public class Youth_Books_Manager : MonoBehaviour
     }
 
     void Switch_Scene() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
