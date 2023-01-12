@@ -14,7 +14,6 @@ public class Youth_Books_Manager : MonoBehaviour
     public GameObject trophy_UI;
     public GameObject books_UI;
     public RawImage[] images;
-    int current_image = 0;
     public float duration = 1f;
 
     // 紀錄選取的書籍
@@ -80,13 +79,11 @@ public class Youth_Books_Manager : MonoBehaviour
         
             // 更換對話框
             books_UI.SetActive(false);
-            // images[current_image].gameObject.SetActive(true);
-            // trophy_UI.SetActive(true);
+    
+            Invoke("Video0_Player", 2f);
 
-            Video0_Player();              
-            
             // 5 秒後切換場景
-            Invoke("Switch_Scene", 12f);
+            Invoke("Switch_Scene", 10f);
         }
     }
 

@@ -8,7 +8,7 @@ public class Now_Hint_Manager : MonoBehaviour
 {
     // 所有可調查物件(會去抓該物件底下的程式碼)
     // 視需求新增變數
-    public Now_Light_Trigger[] items;
+    public Light_Trigger[] items;
 
     // 存放調查物件是否符合顯示 UI 的條件
     // {"遊戲物件名稱": 布林值}
@@ -18,8 +18,8 @@ public class Now_Hint_Manager : MonoBehaviour
     public GameObject hint_space;
 
     // 提示UI座標
-    private Vector3 original_position_hint_space = new Vector3(35f, 650f, 0f);
-    private Vector3 active_position_hint_space = new Vector3(35f, 515f, 0f);
+    private Vector3 original_position_hint_space = new Vector3(0f, -807f, 0f);
+    private Vector3 active_position_hint_space = new Vector3(0f, -467, 0f);
 
 
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class Now_Hint_Manager : MonoBehaviour
 
         // 初始化 save_hint_show (裡面的變數皆為 "false")
         // 視需求進行修改
-        foreach (Now_Light_Trigger item in items) {
+        foreach (Light_Trigger item in items) {
             save_hint_show.Add(item.name, false);
         }
     }
@@ -40,7 +40,7 @@ public class Now_Hint_Manager : MonoBehaviour
     {
         // 更新是否能顯示 UI
         // 視需求進行修改
-        foreach (Now_Light_Trigger item in items) {
+        foreach (Light_Trigger item in items) {
             save_hint_show[item.name] = item.show_hint;
         }
 
@@ -48,12 +48,10 @@ public class Now_Hint_Manager : MonoBehaviour
         if (save_hint_show.ContainsValue(true)) {
             // 顯示提示
             hint_space.transform.DOLocalMove(active_position_hint_space, 1f);
-            hint_space.transform.DOScaleX(1f, 1f);
         }
         else {
             // 隱藏提示
             hint_space.transform.DOLocalMove(original_position_hint_space, 1f);
-            hint_space.transform.DOScaleX(0.2f, 1f);
         }
 
     }

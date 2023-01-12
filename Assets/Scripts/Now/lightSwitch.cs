@@ -6,6 +6,7 @@ public class lightSwitch : MonoBehaviour
 {   
     public Material monster;
     public Material redWall;
+    public GameObject theCamera;
     public GameObject wall;
     public GameObject real1;
     public GameObject real2;
@@ -54,6 +55,7 @@ public class lightSwitch : MonoBehaviour
         real6.SetActive(true);
         talk3.SetActive(true);
         wallMovie.SetActive(true);
+        theCamera.GetComponent<AudioSource>().Play();
         Invoke("destroyTalk", 5.0f);
        
     }

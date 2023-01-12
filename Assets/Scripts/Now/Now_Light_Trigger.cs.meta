@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Now/End_Story.cs.meta
+guid: 8b9c62ef8afca40808c89d14a3681338
+========
 guid: ca1c3fc44655f154f9ae9948ad424251
+>>>>>>>> b4c3546437662cf01dac86c35baaa82ca49c828e:Assets/Scripts/Now/Now_Light_Trigger.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
