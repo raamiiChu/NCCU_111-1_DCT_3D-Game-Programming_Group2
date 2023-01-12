@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
-// test git push
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;
+
+        SceneManager.LoadScene(2);
     }
 
 }
