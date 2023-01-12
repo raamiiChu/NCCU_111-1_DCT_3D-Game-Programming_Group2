@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         pos_player = player.transform.position;
 
         // 檢查是否掉到地圖外
-        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.R)){
+        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.Z)){
             Teleport_To_Spwan_Point();
         }
 

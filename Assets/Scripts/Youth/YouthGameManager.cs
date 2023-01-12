@@ -38,8 +38,8 @@ public class YouthGameManager : MonoBehaviour
         // 紀錄玩家位置
         pos_player = player.transform.position;
 
-        // 檢查是否掉到地圖外 或是 按下 R 鍵
-        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.R)){
+        // 檢查是否掉到地圖外 或是 按下 Z 鍵
+        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.Z)){
             Teleport_To_Spwan_Point();
         }
 
