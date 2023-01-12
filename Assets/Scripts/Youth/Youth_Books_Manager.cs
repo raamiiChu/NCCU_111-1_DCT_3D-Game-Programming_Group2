@@ -80,10 +80,10 @@ public class Youth_Books_Manager : MonoBehaviour
             // 更換對話框
             books_UI.SetActive(false);
     
-            Invoke("Video0_Player", 1.5f);
+            Invoke("Video0_Player", 2f);
 
             // 5 秒後切換場景
-            Invoke("Switch_Scene", 12f);
+            Invoke("Switch_Scene", 10f);
         }
     }
 
@@ -93,12 +93,12 @@ public class Youth_Books_Manager : MonoBehaviour
 
     void Video0_Player()  {
         images[0].gameObject.SetActive(true);
-        Invoke("Video1_Player", 2f);
+        Invoke("Video1_Player", 3f);
     }
 
     void Video1_Player()  {
         images[1].gameObject.SetActive(true);
-        Invoke("Video2_Player", 2f);
+        Invoke("Video2_Player", 3f);
     }
 
     void Video2_Player()  {
