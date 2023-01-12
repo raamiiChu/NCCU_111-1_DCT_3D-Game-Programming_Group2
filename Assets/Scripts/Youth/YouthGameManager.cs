@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class YouthGameManager : MonoBehaviour
 {
@@ -76,6 +77,8 @@ public class YouthGameManager : MonoBehaviour
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;
+
+        SceneManager.LoadScene(1);
     }
 
 }

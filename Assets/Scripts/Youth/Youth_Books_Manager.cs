@@ -4,15 +4,18 @@ using UnityEngine;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Youth_Books_Manager : MonoBehaviour
 {
     // 獎盃
     public GameObject trophy;
-
     // UI
     public GameObject trophy_UI;
     public GameObject books_UI;
+    public RawImage[] images;
+    int current_image = 0;
+    public float duration = 1f;
 
     // 紀錄選取的書籍
     public List<GameObject> choose_book = new List<GameObject> {};
@@ -47,7 +50,7 @@ public class Youth_Books_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -77,15 +80,31 @@ public class Youth_Books_Manager : MonoBehaviour
         
             // 更換對話框
             books_UI.SetActive(false);
-            trophy_UI.SetActive(true);
+            // images[current_image].gameObject.SetActive(true);
+            // trophy_UI.SetActive(true);
 
-
+            Video0_Player();              
+            
             // 5 秒後切換場景
-            Invoke("Switch_Scene", 5f);
+            Invoke("Switch_Scene", 12f);
         }
     }
 
     void Switch_Scene() {
         SceneManager.LoadScene(2);
+    }
+
+    void Video0_Player()  {
+        images[0].gameObject.SetActive(true);
+        Invoke("Video1_Player", 3f);
+    }
+
+    void Video1_Player()  {
+        images[1].gameObject.SetActive(true);
+        Invoke("Video2_Player", 3f);
+    }
+
+    void Video2_Player()  {
+        images[2].gameObject.SetActive(true);
     }
 }
