@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChildrenGameManager : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class ChildrenGameManager : MonoBehaviour
         pos_player = player.transform.position;
 
         // 檢查是否掉到地圖外 或是 按下 R 鍵
-        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.R)){
+        if (player.transform.position.y < -5f || Input.GetKeyDown(KeyCode.Z)){
             Teleport_To_Spwan_Point();
         }
 
@@ -76,6 +77,8 @@ public class ChildrenGameManager : MonoBehaviour
         
         // 解除鎖定玩家位置
         player_rigidbody.constraints = RigidbodyConstraints.None;
+
+        SceneManager.LoadScene(0);
     }
 
 }
