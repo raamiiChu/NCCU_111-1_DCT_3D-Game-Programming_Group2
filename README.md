@@ -1,5 +1,5 @@
-# 111-1 NCCU DCT 3D Game Programming G2
-111-1 國立政治大學 數位內容學程 3D遊戲程式設計 期末專案 第二組  
+# NCCU 111-1 DCT 3D Game Programming G2
+國立政治大學 111學年度 第1學期 數位內容學程 3D遊戲程式設計 期末專案 第二組  
 
 # SampleScripts 檔案內容說明
 
