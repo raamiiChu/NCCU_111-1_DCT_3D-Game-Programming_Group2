@@ -1,13 +1,9 @@
 # 111-1 NCCU DCT 3D Game Programming G2
+111-1 國立政治大學 數位內容學程 3D遊戲程式設計 期末專案 第二組  
 
-# 開啟方式
-1. 下載檔案後用 Unity Hub 開啟  
-2. 點擊 Scenes 底下的 SampleScene  
-![image](https://user-images.githubusercontent.com/87169493/206860837-9eecb2d3-d970-49bb-bb0f-e21f89b26a6e.png)
+# SampleScripts 檔案內容說明
 
-
-# 各腳本功能
-## GameManager
+# GameManager
 ### 概要
 - 玩家基礎操作  
   WASD
@@ -22,7 +18,7 @@
   玩家
 
 
-## Hint_Manager  
+# Hint_Manager  
 ### 概要  
 - 顯示提示 UI (按下 space 調查)  
 ### 位置  
@@ -33,7 +29,7 @@
 - bookshelfs  
 
 
-## Input_Password
+# Input_Password
 ### 概要
 - 輸入密碼  
   按下 Q 叫出輸入密碼介面(密碼：1234)    
@@ -47,7 +43,7 @@
 - correct  
 
 
-## Light_Trigger
+# Light_Trigger
 ### 概要
 - 物件發光  
   玩家靠近後且位於螢幕指定範圍內會發光提示
@@ -78,7 +74,7 @@
   玩家攝影機
 
 
-## Mouse_Drag
+# Mouse_Drag
 ### 概要
 - 按住滑鼠拖曳物件  
   玩家靠近後能拖曳物件
@@ -92,7 +88,7 @@
   玩家
 
 
-## Move_On_Click  
+# Move_On_Click  
 ### 概要  
 - 點擊物件使其移動    
   使用 DOTween，會有動畫感
@@ -105,7 +101,7 @@
   跟 Show_Bookshelf_Item 連動
   
 
-## Pick_Item  
+# Pick_Item  
 ### 概要  
 - 點擊物件將其加入物品欄    
 ### 位置  
@@ -115,7 +111,7 @@
   物品欄 UI  
 
 
-## Shake_On_Click
+# Shake_On_Click
 ### 概要  
 - 點擊後物件會震動
 ### 位置  
@@ -127,7 +123,7 @@
   原本預計要跟 Show_Bookshelf_Item 連動，暫時沒有用處
 
 
-## Show_Bookshelf_Item
+# Show_Bookshelf_Item
 ### 概要
 - 達成條件後顯示物件
   與 Move_On_Click 的物件連動
@@ -142,7 +138,7 @@
   該物件的小型模型，會跟著大物件一起顯示
 
 
-## Switch_Camera_Bookshelf
+# Switch_Camera_Bookshelf
 ### 概要  
 - 玩家靠近物件後才會觸發  
 - 切換攝影機：空白鍵
@@ -165,7 +161,7 @@
   跟 Hint_Manager 連動
 
 
-## Teleport_On_Click  
+# Teleport_On_Click  
 ### 概要  
 - 點擊物件使其移動
   直接更新物件座標，看起來像瞬間移動
